@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  front:api:client:
+    desc: "Generates a TS api client to communicate from the front end to the backend of the application easily"
+    dir: "apps/app"
+    cmds:
+      - pnpm exec orval --config apps/app/orval.config.ts
+  back:prisma:migrate:
+    desc: "Generates migration from database current schema to schema.prisma specified schema and executes it"
+    dir: "apps/api"
+    cmds:
+      - pnpm exec prisma migrate dev
+  back:prisma:client:
+    desc: "Generates an up-to-date Prisma TS client"
+    dir: "apps/api"
+    cmds:
+      - pnpm exec prisma generate dev

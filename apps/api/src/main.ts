@@ -23,8 +23,15 @@ async function bootstrap() {
       .setVersion('1.0')
       .build();
 
-    const documentFactory = () => SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup('swagger', app, documentFactory);
+    const documentFactory = () => SwaggerModule.createDocument(app, config, {
+      deepScanRoutes: true,
+      autoTagControllers: true
+    });
+
+    SwaggerModule.setup('swagger', app, documentFactory, {
+      jsonDocumentUrl: 'swagger/json',
+    });
+
     Logger.warn("Swagger has been setup since the app has not been started in production mode", "App")
   }
 
