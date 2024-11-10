@@ -6,6 +6,11 @@ tasks:
     dir: "apps/app"
     cmds:
       - pnpm exec orval --config apps/app/orval.config.ts
+  front:ui:add:
+    desc: "Tries to add a Chakra UI component to the front end app"
+    dir: "apps/app"
+    cmds:
+      - npx @chakra-ui/ui snippet add
   back:prisma:migrate:
     desc: "Generates migration from database current schema to schema.prisma specified schema and executes it"
     dir: "apps/api"
