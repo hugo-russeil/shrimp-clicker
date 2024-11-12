@@ -4,8 +4,10 @@
     "allowJs": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": false,
     "strict": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "skipLibCheck": true
   },
   "files": [],
   "include": [],

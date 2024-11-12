@@ -15,4 +15,4 @@ module.exports = {
       afterAllFilesWrite: 'pnpm exec prettier --write'
     }
   }
-}
+} as {[k: string]: import('orval').Options};
