@@ -3,9 +3,10 @@ import * as ReactDOM from 'react-dom/client';
 
 import App from './app/app';
 import { Provider } from './components/ui/provider';
-import Comparison from './app/components/comparison/Comparison';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Homepage from './app/homepage';
+import QcmPage from './components/qcm/qcmPage';
 
 const router = createBrowserRouter([
   {
@@ -13,11 +14,15 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '/comparison',
-        element: <Comparison />,
-      }
+        path: '/',
+        element: <Homepage />,
+      },
+      {
+        path: '/qcm',
+        element: <QcmPage />,
+      },
     ]
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
