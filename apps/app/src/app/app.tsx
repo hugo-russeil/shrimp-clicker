@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import { ExerciseQcm, jsonDefault } from '../components/qcm/exerciseqcm';
+import { Navbar } from '../components/navbar/navbar';
 
 export function App() {
   return (
     <div>
+      <Navbar routes={{ "Accueil": '/', "A propos": '/' }}  />
       <Outlet />
     </div>
   );
