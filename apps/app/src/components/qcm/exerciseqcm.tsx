@@ -16,7 +16,7 @@ export const jsonDefault = {
   explication: 'Le cheval blanc de Henri IV est blanc.',
 };
 
-export const ExerciceQcm: React.FC<{ 
+export const ExerciseQcm: React.FC<{ 
   json: {
     title: string,
     question: string,
@@ -76,4 +76,4 @@ export const ExerciceQcm: React.FC<{
   );
 };
 
-export default ExerciceMultiple;
+export default ExerciseQcm;
