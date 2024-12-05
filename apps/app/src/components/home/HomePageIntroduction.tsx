@@ -3,38 +3,23 @@ import Waves from './../Wave';
 import TrailWithLines from './../TrailWithLines';
 import { CheckCircle } from 'lucide-react';
 import { Container } from '@chakra-ui/react';
+import { OceanProblems } from '../../data/data';
+
+const getRandomFacts = (data, count) => {
+  // Shuffle the array using the Fisher-Yates algorithm
+  const shuffled = [...data].sort(() => Math.random() - 0.5);
+  // Return the first 'count' items
+  return shuffled.slice(0, count);
+};
 
 const HomePageIntroduction = () => {
-  const homeContent = [
-    {
-      title: 'Test1',
-      description: 'TODO',
-    },
-    {
-      title: 'Test2',
-      description: 'TODO',
-    },
-    {
-      title: 'Test3',
-      description: 'TODO',
-    },
-    {
-      title: 'Test4',
-      description: 'TODO',
-    },
-    {
-      title: 'Test5',
-      description: 'TODO',
-    },
-    {
-      title: 'Test6',
-      description: 'TODO',
-    },
-    {
-      title: 'Test7',
-      description: 'TODO',
-    },
-  ];
+  // Get 7 random problems while maintaining order
+  const selectedFacts = getRandomFacts(OceanProblems, 7);
+
+  const homeContent = selectedFacts.map((fact) => ({
+    title: fact.nom,
+    description: fact.description,
+  }));
 
   return (
     <Container

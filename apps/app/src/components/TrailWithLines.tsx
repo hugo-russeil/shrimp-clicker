@@ -29,7 +29,7 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
   const trailHeight = coords.length * stepSpacing + 100; // Add padding
 
   return (
-    <ArcherContainer strokeColor="red">
+    <ArcherContainer strokeColor="#62B3E4" strokeWidth={2}>
       <div
         style={{
           height: `${trailHeight}px`,
@@ -50,26 +50,30 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
             }}
           >
             <Grid templateColumns="repeat(4, 1fr)" gap={6}>
+              {/* Circle and Lines */}
               <GridItem colSpan={1}>
                 <ArcherElement
-                  id={'element' + index}
-                  relations={[
-                    {
-                      targetId: 'element' + (index + 1),
-                      targetAnchor: 'top',
-                      sourceAnchor: 'bottom',
-                      style: {
-                        strokeColor: '#62B3E4',
-                        strokeWidth: 2,
-                        endMarker: false,
-                      },
-                    },
-                  ]}
+                  id={`element${index}`}
+                  relations={
+                    index < steps.length - 1
+                      ? [
+                          {
+                            targetId: `element${index + 1}`,
+                            targetAnchor: 'top',
+                            sourceAnchor: 'bottom',
+                            style: {
+                              strokeColor: '#62B3E4',
+                              strokeWidth: 2,
+                              endMarker: false,
+                            },
+                          },
+                        ]
+                      : []
+                  }
                 >
-                  <div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <HoverCardRoot>
                       <HoverCardTrigger asChild>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
                         <Circle color="#0064A8" size={'50px'} />
                       </HoverCardTrigger>
                       <HoverCardContent>
@@ -85,8 +89,7 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                                 {step.content.title}
                               </Card.Title>
                               <Card.Description>
-                                {' '}
-                                {step.content.description}{' '}
+                                {step.content.description}
                               </Card.Description>
                             </Card.Body>
                             <Card.Footer></Card.Footer>
@@ -97,8 +100,11 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                   </div>
                 </ArcherElement>
               </GridItem>
-              <GridItem alignContent={'center'} colSpan={3}>
-                {step.content.title}
+              {/* Title */}
+              <GridItem colSpan={3}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  {step.content.title}
+                </div>
               </GridItem>
             </Grid>
           </div>
