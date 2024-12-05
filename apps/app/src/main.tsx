@@ -6,6 +6,7 @@ import { Provider } from './components/ui/provider';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './app/homepage';
+import QcmPage from './components/qcm/qcmPage';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Homepage />,
+      },
+      {
+        path: '/qcm',
+        element: <QcmPage />,
       },
     ]
   },
