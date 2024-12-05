@@ -1,9 +1,11 @@
-import BodypartsContainer from '../components/bodyparts/BodypartsContainer';
+import { Navbar } from '../components/navbar/navbar';
+import { Outlet } from 'react-router-dom';
 
 export function App() {
   return (
     <div>
-      <BodypartsContainer/>
+      <Navbar routes={{ "Accueil": '/', "A propos": '/' }}  />
+      <Outlet />
     </div>
   );
 }

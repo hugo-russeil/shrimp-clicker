@@ -5,11 +5,18 @@ import App from './app/app';
 import { Provider } from './components/ui/provider';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Homepage from './app/homepage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Homepage />,
+      },
+    ]
   },
 ]);
 
