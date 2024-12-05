@@ -56,6 +56,9 @@ importers:
       react:
         specifier: 18.3.1
         version: 18.3.1
+      react-archer:
+        specifier: ^4.4.0
+        version: 4.4.0(@types/react@18.3.1)(prop-types@15.8.1)(react@18.3.1)
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
@@ -6577,6 +6580,13 @@ packages:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
     engines: {node: '>= 0.8'}
 
+  react-archer@4.4.0:
+    resolution: {integrity: sha512-m9mEpGHphwWZW7mzk7UVGJVwom353lAbDQ/DJIYH59LnEpEVyaE3KxZKBChB5WYipyOl3HhRlVQk+TknJbGfSQ==}
+    peerDependencies:
+      '@types/react': ^16.8.8 || ^17 || ^18
+      prop-types: ^15.6.2
+      react: ^16.9.0 || ^17 || ^18
+
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -6587,6 +6597,9 @@ packages:
     peerDependencies:
       react: '>= 16.3.0'
       react-dom: '>= 16.3.0'
+
+  react-fast-compare@2.0.4:
+    resolution: {integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==}
 
   react-icons@5.3.0:
     resolution: {integrity: sha512-DnUk8aFbTyQPSkCfF8dbX6kQjXA9DktMeJqfjrg6cK9vwQVMxmcA3BfP4QoiztVmEHtwlTgLFsPuH2NskKT6eg==}
@@ -6709,6 +6722,9 @@ packages:
 
   requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
+
+  resize-observer-polyfill@1.5.0:
+    resolution: {integrity: sha512-M2AelyJDVR/oLnToJLtuDJRBBWUGUvvGigj1411hXhAdyFWqMaqHp7TixW3FpiLuVaikIcR1QL+zqoJoZlOgpg==}
 
   resolve-alpn@1.2.1:
     resolution: {integrity: sha512-0a1F4l73/ZFZOakJnQ3FvkJ2+gSTQWz/r2KE5OdDY0TxPm5h4GkqkWWfM47T7HsbnOtcJVEF4epCVy6u7Q3K+g==}
@@ -15920,6 +15936,14 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
+  react-archer@4.4.0(@types/react@18.3.1)(prop-types@15.8.1)(react@18.3.1):
+    dependencies:
+      '@types/react': 18.3.1
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-fast-compare: 2.0.4
+      resize-observer-polyfill: 1.5.0
+
   react-dom@18.3.1(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
@@ -15932,6 +15956,8 @@ snapshots:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  react-fast-compare@2.0.4: {}
 
   react-icons@5.3.0(react@18.3.1):
     dependencies:
@@ -16064,6 +16090,8 @@ snapshots:
   require-from-string@2.0.2: {}
 
   requires-port@1.0.0: {}
+
+  resize-observer-polyfill@1.5.0: {}
 
   resolve-alpn@1.2.1: {}
 
