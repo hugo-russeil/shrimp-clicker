@@ -69,8 +69,12 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                   <div>
                     <HoverCardRoot>
                       <HoverCardTrigger asChild>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                        <Circle color="#0064A8" size={'50px'} />
+                        <Circle
+                          color="#0064A8"
+                          fill="#0064A8"
+                          size={'50px'}
+                          className={`hover:scale-150 transition-all duration-500`}
+                        />
                       </HoverCardTrigger>
                       <HoverCardContent>
                         <HoverCardArrow />
@@ -85,8 +89,7 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                                 {step.content.title}
                               </Card.Title>
                               <Card.Description>
-                                {' '}
-                                {step.content.description}{' '}
+                                {step.content.description}
                               </Card.Description>
                             </Card.Body>
                             <Card.Footer></Card.Footer>
