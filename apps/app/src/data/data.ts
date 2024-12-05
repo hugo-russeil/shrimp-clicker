@@ -1,4 +1,4 @@
-const OceanProblems = [
+export const OceanProblems = [
     {
         "id": 1,
         "nom": "La pollution plastique",
