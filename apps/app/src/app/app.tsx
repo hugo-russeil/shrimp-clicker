@@ -1,9 +1,9 @@
-import NxWelcome from './nx-welcome';
+import BodypartsContainer from '../components/bodyparts/BodypartsContainer';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="app" />
+      <BodypartsContainer/>
     </div>
   );
 }
