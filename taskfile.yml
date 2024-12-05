@@ -10,7 +10,7 @@ tasks:
     desc: "Tries to add a Chakra UI component to the front end app"
     dir: "apps/app"
     cmds:
-      - npx @chakra-ui/cli snippet add
+      - npx @chakra-ui/cli snippet add --all
   back:prisma:migrate:
     desc: "Generates migration from database current schema to schema.prisma specified schema and executes it"
     dir: "apps/api"
