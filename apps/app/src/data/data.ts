@@ -146,3 +146,176 @@ export const OceanProblems = [
     }
 
 ];
+
+export const qcmQuestions = [ 
+    {
+      title: 'Exercice QCM',
+      question: 'Quel phénomène environnemental accélère l’acidification des océans, menaçant les récifs coralliens et perturbant les courants océaniques ?',
+      items: [
+        { type: 'text', value: 'L’augmentation des émissions de CO₂' },
+        { type: 'text', value: 'L’exploitation minière des fonds marins' },
+        { type: 'text', value: 'Les marées noires' },
+        { type: 'text', value: 'La prolifération d’algues nuisibles' },
+      ],
+      answers: [
+        0,
+      ],
+      explication: 'L’augmentation des émissions de CO₂ est absorbée par les océans, provoquant leur acidification et impactant de nombreux écosystèmes.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Pourquoi la migration des espèces marines induite par le réchauffement climatique constitue-t-elle une menace pour les écosystèmes ?',
+      items: [
+        { type: 'text', value: 'Elles introduisent de nouvelles maladies et parasites.' },
+        { type: 'text', value: 'Elles créent un déséquilibre dans les chaînes alimentaires locales.' },
+        { type: 'text', value: 'Elles augmentent la compétition pour les ressources disponibles.' },
+        { type: 'text', value: 'Toutes ces réponses.' },
+      ],
+      answers: [
+        3,
+      ],
+      explication: 'Les migrations provoquées par le réchauffement perturbent les écosystèmes locaux en introduisant des maladies, augmentant la compétition, et déséquilibrant les chaînes alimentaires.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Quelles conséquences principales résultent de l’accumulation de microplastiques dans les sédiments océaniques profonds ?',
+      items: [
+        { type: 'text', value: 'Une réduction de la biodiversité benthique.' },
+        { type: 'text', value: 'Une contamination accrue des chaînes alimentaires.' },
+        { type: 'text', value: 'Une perturbation des cycles biogéochimiques marins.' },
+        { type: 'text', value: 'Toutes ces réponses.' },
+      ],
+      answers: [
+        3,
+      ],
+      explication: 'Les microplastiques s’accumulent dans les écosystèmes profonds, réduisant la biodiversité, perturbant les cycles biogéochimiques et contaminant les chaînes alimentaires.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Comment la disparition des mangroves impacte-t-elle le cycle global du carbone ?',
+      items: [
+        { type: 'text', value: 'Elle réduit la capacité de stockage naturel du carbone.' },
+        { type: 'text', value: 'Elle augmente les émissions de méthane des zones côtières.' },
+        { type: 'text', value: 'Elle favorise l’acidification des océans.' },
+        { type: 'text', value: 'Elle n’a pas d’impact significatif sur le cycle global du carbone.' },
+      ],
+      answers: [
+        0,
+      ],
+      explication: 'Les mangroves stockent d’importantes quantités de carbone. Leur disparition réduit cette capacité de séquestration et libère du carbone dans l’atmosphère.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Quel est l’impact majeur des panaches de sédiments générés par l’exploitation minière des fonds marins ?',
+      items: [
+        { type: 'text', value: 'La destruction des habitats benthiques.' },
+        { type: 'text', value: 'L’augmentation de la température des eaux profondes.' },
+        { type: 'text', value: 'La diffusion de contaminants sur de vastes zones.' },
+        { type: 'text', value: 'Les réponses A et C.' },
+      ],
+      answers: [
+        3,
+      ],
+      explication: 'Les panaches de sédiments détruisent les habitats benthiques et propagent des polluants, nuisant à la vie marine sur de grandes distances.',
+    },
+      {
+      title: 'Exercice QCM',
+      question: 'Quel processus lié à l’eutrophisation entraîne la création de zones mortes dans les océans ?',
+      items: [
+        { type: 'text', value: 'L’accumulation excessive de nutriments' },
+        { type: 'text', value: 'La surpêche des prédateurs' },
+        { type: 'text', value: 'L’introduction d’espèces invasives' },
+        { type: 'text', value: 'La fonte des glaces polaires' },
+      ],
+      answers: [
+        0,
+      ],
+      explication: 'L’eutrophisation est causée par l’excès de nutriments dans les eaux, favorisant la prolifération d’algues et réduisant l’oxygène, créant des zones mortes.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Pourquoi les marées noires ont-elles un impact à long terme sur les écosystèmes marins ?',
+      items: [
+        { type: 'text', value: 'Les hydrocarbures persistent dans l’environnement pendant des décennies.' },
+        { type: 'text', value: 'Les marées noires détruisent les écosystèmes côtiers, essentiels pour la biodiversité.' },
+        { type: 'text', value: 'Les hydrocarbures s’accumulent dans les chaînes alimentaires marines.' },
+        { type: 'text', value: 'Toutes ces réponses.' },
+      ],
+      answers: [
+        3,
+      ],
+      explication: 'Les hydrocarbures issus des marées noires ont des effets persistants, affectant la biodiversité, les habitats côtiers et les chaînes alimentaires.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Quel rôle jouent les courants océaniques comme l’AMOC dans la régulation climatique mondiale ?',
+      items: [
+        { type: 'text', value: 'Ils transportent la chaleur des tropiques vers les pôles.' },
+        { type: 'text', value: 'Ils favorisent la prolifération d’espèces invasives.' },
+        { type: 'text', value: 'Ils augmentent la concentration de CO₂ dans l’atmosphère.' },
+        { type: 'text', value: 'Ils réduisent la fréquence des tempêtes tropicales.' },
+      ],
+      answers: [
+        0,
+      ],
+      explication: 'L’AMOC transporte la chaleur des régions équatoriales vers les pôles, jouant un rôle clé dans le climat et les écosystèmes marins.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Pourquoi les micropolluants comme les métaux lourds constituent-ils une menace sérieuse pour la vie marine ?',
+      items: [
+        { type: 'text', value: 'Ils s’accumulent dans les organismes marins, affectant leur reproduction.' },
+        { type: 'text', value: 'Ils se concentrent au fur et à mesure de leur progression dans la chaîne alimentaire.' },
+        { type: 'text', value: 'Ils perturbent les processus métaboliques des espèces marines.' },
+        { type: 'text', value: 'Toutes ces réponses.' },
+      ],
+      answers: [
+        3,
+      ],
+      explication: 'Les micropolluants s’accumulent dans la chaîne alimentaire et perturbent les fonctions biologiques des organismes marins, menaçant les écosystèmes.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Quel est le principal danger des déchets de pêche fantômes pour la faune marine ?',
+      items: [
+        { type: 'text', value: 'Ils piègent et tuent des animaux marins de manière continue.' },
+        { type: 'text', value: 'Ils augmentent la concentration de microplastiques dans l’océan.' },
+        { type: 'text', value: 'Ils endommagent les récifs coralliens.' },
+        { type: 'text', value: 'Ils réduisent la capacité des océans à absorber le CO₂.' },
+      ],
+      answers: [
+        0,
+      ],
+      explication: 'Les déchets de pêche fantômes continuent de capturer et de tuer des animaux marins pendant des années, perturbant les écosystèmes marins.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Comment les proliférations d’algues nuisibles (HAB) affectent-elles les écosystèmes marins ?',
+      items: [
+        { type: 'text', value: 'Elles produisent des toxines dangereuses pour les organismes marins.' },
+        { type: 'text', value: 'Elles réduisent la quantité d’oxygène disponible dans l’eau.' },
+        { type: 'text', value: 'Elles perturbent les chaînes alimentaires locales.' },
+        { type: 'text', value: 'Toutes ces réponses.' },
+      ],
+      answers: [
+        3,
+      ],
+      explication: 'Les HAB produisent des toxines, réduisent l’oxygène et perturbent les écosystèmes, causant des pertes importantes de biodiversité.',
+    },
+    {
+      title: 'Exercice QCM',
+      question: 'Quel impact majeur la destruction des herbiers marins a-t-elle sur les écosystèmes côtiers ?',
+      items: [
+        { type: 'text', value: 'Une augmentation de l’érosion côtière.' },
+        { type: 'text', value: 'Une perte de puits de carbone naturels.' },
+        { type: 'text', value: 'Un déclin des espèces marines qui s’y abritent.' },
+        { type: 'text', value: 'Toutes ces réponses.' },
+      ],
+      answers: [
+        3,
+      ],
+      explication: 'Les herbiers marins protègent les côtes, stockent le carbone et fournissent un habitat crucial pour de nombreuses espèces marines.',
+    }
+  ];
+  
+  
