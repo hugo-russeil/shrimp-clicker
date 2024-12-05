@@ -6,10 +6,12 @@ import { Container } from '@chakra-ui/react';
 import { OceanProblems } from '../../data/data';
 
 const getRandomFacts = (data, count) => {
-  // Shuffle the array using the Fisher-Yates algorithm
+  // Shuffle the array
   const shuffled = [...data].sort(() => Math.random() - 0.5);
-  // Return the first 'count' items
-  return shuffled.slice(0, count);
+  // Slice the first `count` items
+  const selected = shuffled.slice(0, count);
+  // Sort the selected items by `id`
+  return selected.sort((a, b) => a.id - b.id);
 };
 
 const HomePageIntroduction = () => {
