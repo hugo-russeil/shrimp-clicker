@@ -40,7 +40,7 @@ const Waves = ({ colors, backgroundColor, reversed, ...props }) => {
             margin={'0'}
             padding={'0'}
             maxWidth={'100%'}
-            rotate={'180'}
+            rotate={reversed ? '180' : '0'}
           >
             <svg
               key={index}

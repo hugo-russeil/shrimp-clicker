@@ -4,7 +4,7 @@ import TrailWithLines from './../TrailWithLines';
 import { CheckCircle } from 'lucide-react';
 import { Container } from '@chakra-ui/react';
 
-const Home = () => {
+const HomePageIntroduction = () => {
   const homeContent = [
     {
       title: 'Test1',
@@ -44,8 +44,8 @@ const Home = () => {
       backgroundColor={'#D3D3D3'}
     >
       <Waves
-        className={'h-8'}
-        colors={['fill-white', 'fill-white', 'fill-white', 'fill-white']}
+        className={'h-8 shadow-lg'}
+        colors={['fill-[#DEDEDE]', 'fill-[#DEDEDE]', 'fill-[#ABABAB]', 'fill-white']}
         backgroundColor={'white'}
         reversed={true}
       />
@@ -69,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePageIntroduction;

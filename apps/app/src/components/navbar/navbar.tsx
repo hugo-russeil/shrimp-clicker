@@ -4,7 +4,7 @@ export const Navbar: React.FC<{ routes: Record<string, string> }> = ({
   routes,
 }) => {
   return (
-    <nav className="navbar bg-slate-20 w-full sticky top-0 left-0 b bg-white text-black">
+    <nav className="navbar bg-slate-20 w-full sticky top-0 left-0 b bg-white text-black z-50">
       <ul className="flex navbar-nav place-content-center gap-4">
         {Object.keys(routes).map((route) => {
           return (
