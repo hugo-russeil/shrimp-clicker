@@ -62,7 +62,7 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                 </ArcherElement>
               </GridItem>
               <GridItem alignContent={'center'} colSpan={3}>
-                {step.content}
+                {step.content.title}
               </GridItem>
             </Grid>
           </div>
