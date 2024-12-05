@@ -80,7 +80,6 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                           size={'50px'}
                           className={`hover:scale-150 transition-all duration-500`}
                         />
-                        <Circle color="#0064A8" size={'50px'} />
                       </HoverCardTrigger>
                       <HoverCardContent>
                         <HoverCardArrow />
