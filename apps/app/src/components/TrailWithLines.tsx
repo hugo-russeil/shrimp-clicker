@@ -83,7 +83,7 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                         >
                           <Box>
                             <Card.Body>
-                              <Card.Title mb="2" whiteSpace={'nowrap'} key={index}>
+                              <Card.Title mb="2" whiteSpace={'nowrap'}>
                                 {step.content.title}
                               </Card.Title>
                               <Card.Description w={'md'}>
