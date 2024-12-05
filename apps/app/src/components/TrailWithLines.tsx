@@ -76,19 +76,17 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                       <HoverCardTrigger asChild>
                         <Circle color="#0064A8" size={'50px'} />
                       </HoverCardTrigger>
-                      <HoverCardContent>
+                      <HoverCardContent className={'max-w-fit'}>
                         <HoverCardArrow />
                         <Card.Root
                           flexDirection="row"
-                          overflow="hidden"
-                          maxW={'xl'}
                         >
                           <Box>
-                            <Card.Body className="min-w-[500px]">
-                              <Card.Title mb="2">
+                            <Card.Body>
+                              <Card.Title mb="2" whiteSpace={'nowrap'} key={index}>
                                 {step.content.title}
                               </Card.Title>
-                              <Card.Description>
+                              <Card.Description w={'md'}>
                                 {step.content.description}
                               </Card.Description>
                             </Card.Body>
