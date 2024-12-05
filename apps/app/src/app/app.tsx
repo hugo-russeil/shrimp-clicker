@@ -30,15 +30,6 @@ export function App() {
     <Container>
       <p> Test 7 </p>
     </Container>,
-    <Container>
-      <p> Test 8 </p>
-    </Container>,
-    <Container>
-      <p> Test 9 </p>
-    </Container>,
-    <Container>
-      <p> Test 10 </p>
-    </Container>,
   ];
   return (
     <Container margin={'0'} padding={'0'} maxWidth={'100%'}>
