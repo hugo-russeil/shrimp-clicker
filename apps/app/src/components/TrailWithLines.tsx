@@ -2,6 +2,14 @@ import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react';
 import { Circle } from 'lucide-react';
 import { ArcherContainer, ArcherElement } from 'react-archer';
+import {
+  HoverCardArrow,
+  HoverCardContent,
+  HoverCardRoot,
+  HoverCardTrigger,
+} from './ui/hover-card';
+import { Card } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
   let coords = [];
@@ -58,7 +66,35 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                     },
                   ]}
                 >
-                  <Circle color="#0064A8" size={'50px'} />
+                  <div>
+                    <HoverCardRoot>
+                      <HoverCardTrigger asChild>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+                        <Circle color="#0064A8" size={'50px'} />
+                      </HoverCardTrigger>
+                      <HoverCardContent>
+                        <HoverCardArrow />
+                        <Card.Root
+                          flexDirection="row"
+                          overflow="hidden"
+                          maxW={'xl'}
+                        >
+                          <Box>
+                            <Card.Body className="min-w-[500px]">
+                              <Card.Title mb="2">
+                                {step.content.title}
+                              </Card.Title>
+                              <Card.Description>
+                                {' '}
+                                {step.content.description}{' '}
+                              </Card.Description>
+                            </Card.Body>
+                            <Card.Footer></Card.Footer>
+                          </Box>
+                        </Card.Root>
+                      </HoverCardContent>
+                    </HoverCardRoot>
+                  </div>
                 </ArcherElement>
               </GridItem>
               <GridItem alignContent={'center'} colSpan={3}>

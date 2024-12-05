@@ -45,7 +45,12 @@ const HomePageIntroduction = () => {
     >
       <Waves
         className={'h-8 shadow-lg'}
-        colors={['fill-[#DEDEDE]', 'fill-[#DEDEDE]', 'fill-[#ABABAB]', 'fill-white']}
+        colors={[
+          'fill-[#DEDEDE]',
+          'fill-[#DEDEDE]',
+          'fill-[#ABABAB]',
+          'fill-white',
+        ]}
         backgroundColor={'white'}
         reversed={true}
       />
