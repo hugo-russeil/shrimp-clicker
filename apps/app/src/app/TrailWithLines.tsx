@@ -50,7 +50,11 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                       targetId: 'element' + (index + 1),
                       targetAnchor: 'top',
                       sourceAnchor: 'bottom',
-                      style: { strokeColor: '#62B3E4', strokeWidth: 2 },
+                      style: {
+                        strokeColor: '#62B3E4',
+                        strokeWidth: 2,
+                        endMarker: false,
+                      },
                     },
                   ]}
                 >
