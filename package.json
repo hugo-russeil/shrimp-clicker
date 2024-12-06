@@ -7,6 +7,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.1.1",
     "@emotion/react": "^11.13.3",
+    "@img-comparison-slider/react": "^8.0.2",
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
@@ -15,17 +16,24 @@
     "@prisma/client": "5.22.0",
     "@tanstack/react-query": "^5.59.20",
     "axios": "^1.6.0",
+    "characterset": "^2.0.0",
     "csrf-csrf": "^3.0.8",
     "helmet": "^8.0.0",
     "lucide-react": "^0.456.0",
     "msw": "^2.6.3",
     "next-themes": "^0.4.3",
     "react": "18.3.1",
+    "react-archer": "^4.4.0",
+    "react-confetti-explosion": "^2.1.2",
     "react-dom": "18.3.1",
     "react-icons": "^5.3.0",
+    "react-image-pin": "^1.6.4",
+    "react-interval-hook": "^1.1.4",
+    "react-konami-code": "^2.3.0",
     "react-router-dom": "^6.28.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "swiper": "^11.1.15"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
