@@ -24,7 +24,7 @@ export function App() {
   return (
     <div>
       <Navbar
-        routes={{ Accueil: '/', Qcm: '/qcm', Collection: '/collection' }}
+        routes={{ Accueil: '/', Qcm: '/qcm', Collection: '/collection', Clicker: '/clicker' }}
       />
       <Outlet />
     </div>
