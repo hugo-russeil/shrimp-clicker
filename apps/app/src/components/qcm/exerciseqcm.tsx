@@ -1,35 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { QcmOption } from './qcmoption';
-import { title } from 'process';
 import FinalPage from './finalpage';
 import { Button } from '@chakra-ui/react';
 
-export const jsonDefault = [
-  {
-    title: 'Exercice QCM',
-    question: 'Quelle est la couleur du cheval blanc de Henri IV ?',
-    items: [
-      { type: 'text', value: 'Blanc' },
-      { type: 'text', value: 'Noir' },
-      { type: 'text', value: 'Rouge' },
-      { type: 'text', value: 'Vert' },
-    ],
-    answers: [0],
-    explication: 'Le cheval blanc de Henri IV est blanc.',
-  },
-  {
-    title: 'Exercice QCM',
-    question: 'Quelle est la couleur du cheval blanc de Napoléon ?',
-    items: [
-      { type: 'text', value: 'Blanc' },
-      { type: 'text', value: 'Noir' },
-      { type: 'text', value: 'Rouge' },
-      { type: 'text', value: 'Vert' },
-    ],
-    answers: [0],
-    explication: 'Le cheval blanc de Napoléon est noir.',
-  },
-];
+// Utility function to shuffle an array
+const shuffleArray = (array: any[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 export const ExerciseQcm: React.FC<{
   json: {
@@ -49,12 +31,14 @@ export const ExerciseQcm: React.FC<{
   } | null>(null);
   const [isCorrect, setCorrect] = useState<boolean>(false);
   const [isFinish, setIsFinish] = useState<boolean>(false);
+  const [shuffledItems, setShuffledItems] = useState<{ type: string; value: string }[]>([]);
 
-  var question = json[actualQuestion];
+  const question = json[actualQuestion];
 
-  const correctAnswers = question['items'].map((item) => {
-    return item;
-  });
+  // Shuffle answers on component mount and whenever the question changes
+  useEffect(() => {
+    setShuffledItems(shuffleArray(question.items));
+  }, [actualQuestion]);
 
   const selectAnswer = (answer: { type: string; value: string }) => {
     if (!isSubmitted) {
@@ -65,9 +49,8 @@ export const ExerciseQcm: React.FC<{
   const validateButton = () => {
     if (selectedAnswer) {
       setSubmitted(true);
-      if (
-        question['answers'].includes(correctAnswers.indexOf(selectedAnswer))
-      ) {
+      const originalIndex = question.items.findIndex(item => item.value === selectedAnswer.value);
+      if (question.answers.includes(originalIndex)) {
         setCorrect(true);
         setGoodAnswers(goodAnswers + 1);
       } else {
@@ -84,10 +67,10 @@ export const ExerciseQcm: React.FC<{
             <p className="text-center">
               {actualQuestion + 1} / {json.length}
             </p>
-            <h1 className="text-xl font-bold">{question['title']}</h1>
-            <h2 className="text-lg">{question['question']}</h2>
+            <h1 className="text-xl font-bold">{question.title}</h1>
+            <h2 className="text-lg">{question.question}</h2>
             <div className={'grid grid-cols-2 gap-2 mt-4'}>
-              {question['items'].map((value, index) => (
+              {shuffledItems.map((value, index) => (
                 <QcmOption
                   key={index}
                   value={value}
@@ -99,10 +82,11 @@ export const ExerciseQcm: React.FC<{
         )}
 
         {!isSubmitted && !isFinish && (
-          <button onClick={() => validateButton()}>
-            <p className="text-lg bg-slate-400 p-1 mt-5 dark:bg-slate-200 dark:text-black rounded">
-              Valider
-            </p>
+          <button
+            onClick={() => validateButton()}
+            className="text-lg bg-slate-400 p-2 mt-5 dark:bg-slate-200 dark:text-black rounded"
+          >
+            Valider
           </button>
         )}
 
@@ -111,7 +95,7 @@ export const ExerciseQcm: React.FC<{
             <p className={isCorrect ? 'text-green-400' : 'text-red-600'}>
               {isCorrect ? 'Bonne réponse' : 'Mauvaise réponse'}
             </p>
-            <p>{question['explication']}</p>
+            <p>{question.explication}</p>
             <button
               onClick={() => {
                 setQuestion(actualQuestion + 1);
@@ -119,10 +103,9 @@ export const ExerciseQcm: React.FC<{
                 setSelected(null);
                 setCorrect(false);
               }}
+              className="text-lg bg-slate-400 p-2 mt-5 dark:bg-slate-200 dark:text-black rounded"
             >
-              <p className="text-lg bg-slate-400 p-1 mt-5 dark:bg-slate-200 dark:text-black rounded">
-                Suivant
-              </p>
+              Suivant
             </button>
           </div>
         )}
@@ -131,14 +114,15 @@ export const ExerciseQcm: React.FC<{
             <p className={isCorrect ? 'text-green-400' : 'text-red-600'}>
               {isCorrect ? 'Bonne réponse' : 'Mauvaise réponse'}
             </p>
-            <p>{question['explication']}</p>
-            <Button
+            <p>{question.explication}</p>
+            <button
               onClick={() => {
                 setIsFinish(true);
               }}
+              className="mt-5 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium shadow-lg hover:bg-blue-700 transition"
             >
               Voir le résultat
-            </Button>
+            </button>
           </div>
         )}
         {isFinish && (
