@@ -128,7 +128,7 @@ export default function Clicker() {
   ];
 
   const [totalCollectedPlanktons, setTotalCollectedPlanktons] = useState(0);
-  const [collectedPlanktons, setCollectedPlanktons] = useState(1000000000);
+  const [collectedPlanktons, setCollectedPlanktons] = useState(0);
 
   const [unlockedAutoclickUpgrades, setUnlockedAutoclickUpgrades] = useState<
     Array<string>
