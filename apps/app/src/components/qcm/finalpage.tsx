@@ -64,7 +64,7 @@ const FinalPage = ({ score, total }: { score: number; total: number }) => {
                 <Image
                   src={'/pufferfish.png'}
                   alt="Image de poisson"
-                  imageRendering={'crisp-edges'}
+                  imageRendering={'pixelated'}
                   width={'100px'}
                   height={'100px'}
                   opacity={isExploding ? 0 : 1}

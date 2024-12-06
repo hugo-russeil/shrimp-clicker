@@ -87,12 +87,15 @@ export const CustomPin = ({ pin }: { pin: ImagePin }) => {
 
 export default function Bodyparts() {
 
+  const width = window.innerWidth;
+  const isMobile = width < 768;
+
   return (
     <div>
-      <h1 className={'text-2xl w-full text-center my-12'}>
+      <h1 className={'text-2xl w-full md:w-2/3 text-center my-12'}>
         Explore les similarités du corps humain et des océans
       </h1>
-      <div className={'w-full md:w-[30%] mx-auto'}>
+      <div className={isMobile? 'w-full mx-auto': 'w-1/3 mx-auto'}>
         <ImagePinContainer
           image={'bodyparts.png'}
           imageAlt={'Parties du corps humain'}

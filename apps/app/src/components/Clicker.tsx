@@ -128,7 +128,7 @@ export default function Clicker() {
   ];
 
   const [totalCollectedPlanktons, setTotalCollectedPlanktons] = useState(0);
-  const [collectedPlanktons, setCollectedPlanktons] = useState(1000000000);
+  const [collectedPlanktons, setCollectedPlanktons] = useState(0);
 
   const [unlockedAutoclickUpgrades, setUnlockedAutoclickUpgrades] = useState<
     Array<string>
@@ -204,7 +204,7 @@ export default function Clicker() {
           <Image
             src={'/salmon.png'}
             alt="Image de poisson"
-            imageRendering={'crisp-edges'}
+            imageRendering={'pixelated'}
             width={'100px'}
             height={'100px'}
             opacity={isExploding ? 0 : 1}

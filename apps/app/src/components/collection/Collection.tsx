@@ -56,7 +56,7 @@ const Collection = () => {
                 className="flex justify-center items-center bg-white rounded-lg shadow-md"
               >
                 <Image
-                  imageRendering={'crisp-edges'}
+                  imageRendering={'pixelated'}
                   width={['150px', '250px', '350px']}
                   height={['150px', '250px', '350px']}
                   src={fish + '.png'}
