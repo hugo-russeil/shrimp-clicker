@@ -36,17 +36,21 @@ export function App() {
   const [position, setPosition] = useState({ top: '80%', left: '110%' });
   const [rotate, setRotate] = useState('30deg');
   const [isExploding, setIsExploding] = useState(false);
+  const [display, setDisplay] = useState('none');
 
   const moveImage = () => {
     const position =  window.scrollY;
     const windowHeight = window.innerHeight;
     const top = position + windowHeight / 2;
     console.log(top);
-    setPosition({
-      // en fonction de la ou est l'utilisateur
-      top: `${top}px`,
-      left: '48%',
-    });
+    setDisplay('block');
+    setTimeout(() => {
+      setPosition({
+        // en fonction de la ou est l'utilisateur
+        top: `${top}px`,
+        left: '48%',
+      });
+    }, 1000);
   };
 
   return (
@@ -63,6 +67,7 @@ export function App() {
             left: position.left,
             transition: 'all 3s',
             rotate: rotate,
+            display: display
           }}
           className="w-20 h-20 absolute"
         >
