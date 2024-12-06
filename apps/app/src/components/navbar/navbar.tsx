@@ -42,6 +42,7 @@ backgroundColor: "white",/*
            color: "black",
   width: "100%",
 height: "200%",
+  padding: "10px",
             }}
         >
     <ul
