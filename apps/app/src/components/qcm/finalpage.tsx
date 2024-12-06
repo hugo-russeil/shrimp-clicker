@@ -18,9 +18,11 @@ const FinalPage = ({ score, total }: { score: number; total: number }) => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      moveImage();
-    }, 3000);
+    if (isPerfectScore) {
+      setTimeout(() => {
+        moveImage();
+      }, 3000);
+    }
   }, []);
 
   // Determine the background color based on the score range
