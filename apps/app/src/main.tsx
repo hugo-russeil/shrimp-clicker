@@ -6,6 +6,7 @@ import { Provider } from './components/ui/provider';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './app/homepage';
+import Clicker from './components/Clicker';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Homepage />,
+      },
+      {
+        path: '/clicker',
+        element: <Clicker />,
       },
     ]
   },
