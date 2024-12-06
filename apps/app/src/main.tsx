@@ -9,6 +9,11 @@ import Homepage from './app/homepage';
 
 import Clicker from './components/Clicker';
 import QcmPage from './components/qcm/qcmPage';
+import HearthComparison from './components/comparison/HearthComparison';
+import LungComparison from './components/comparison/LungComparison';
+import StomachComparison from './components/comparison/StomachComparison';
+import LiverComparison from './components/comparison/LiverComparison';
+import SkinComparison from './components/comparison/SkinComparison';
 
 import Collection from './components/collection/Collection';
 
@@ -33,6 +38,26 @@ const router = createBrowserRouter([
         path: '/qcm',
         element: <QcmPage />,
       },
+      {
+        path: '/comparison/lungs',
+        element: <LungComparison/>
+      },
+      {
+        path: '/comparison/hearth',
+        element: <HearthComparison/>
+      },
+      {
+        path: '/comparison/stomach',
+        element: <StomachComparison/>
+      },
+      {
+        path: '/comparison/liver',
+        element: <LiverComparison/>
+      },
+      {
+        path: '/comparison/skin',
+        element: <SkinComparison/>
+      }
     ]
   },
 ]);

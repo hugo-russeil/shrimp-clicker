@@ -14,6 +14,9 @@ importers:
       '@emotion/react':
         specifier: ^11.13.3
         version: 11.13.3(@types/react@18.3.1)(react@18.3.1)
+      '@img-comparison-slider/react':
+        specifier: ^8.0.2
+        version: 8.0.2
       '@nestjs/common':
         specifier: ^10.0.2
         version: 10.4.7(reflect-metadata@0.1.14)(rxjs@7.8.1)
@@ -83,6 +86,9 @@ importers:
       rxjs:
         specifier: ^7.8.0
         version: 7.8.1
+      swiper:
+        specifier: ^11.1.15
+        version: 11.1.15
     devDependencies:
       '@eslint/js':
         specifier: ^9.8.0
@@ -1401,6 +1407,9 @@ packages:
   '@ibm-cloud/openapi-ruleset@1.24.0':
     resolution: {integrity: sha512-Ta6W4decBC9vPZLm+U86K95d1jAzAlElzTCLiNxcRjklLSAUKjGLaLbLW/Rsdd5W5s3VPtPxS2zdgP4H3Hg9CQ==}
     engines: {node: '>=16.0.0'}
+
+  '@img-comparison-slider/react@8.0.2':
+    resolution: {integrity: sha512-Him0yhbXpMXdnV6R3XE3LiXcMRhSXFMsbk6I7ct5HxO2YpK/BAGz3ub+7+akJRnK2XI7c3vQqvoIE507N1K4SA==}
 
   '@inquirer/confirm@5.0.1':
     resolution: {integrity: sha512-6ycMm7k7NUApiMGfVc32yIPp28iPKxhGRMqoNDiUjq2RyTAkbs5Fx0TdzBqhabcKvniDdAAvHCmsRjnNfTsogw==}
@@ -4928,6 +4937,9 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
+  img-comparison-slider@8.0.6:
+    resolution: {integrity: sha512-ej4de7mWyjcXZvDgHq8K2a/dG8Vv+qYTdUjZa3cVILf316rLtDrHyGbh9fPvixmAFgbs30zTLfmaRDa7abjtzw==}
+
   immer@9.0.21:
     resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
 
@@ -7314,6 +7326,10 @@ packages:
     resolution: {integrity: sha512-upi/0ZGkYgEcLeGieoz8gT74oWHA0E7JivX7aN9mAf+Tc7BQoRBvnIGHoPDw+f9TXTW4s6kGYCZJtauP6OYp7g==}
     hasBin: true
 
+  swiper@11.1.15:
+    resolution: {integrity: sha512-IzWeU34WwC7gbhjKsjkImTuCRf+lRbO6cnxMGs88iVNKDwV+xQpBCJxZ4bNH6gSrIbbyVJ1kuGzo3JTtz//CBw==}
+    engines: {node: '>= 4.7.0'}
+    
   symbol-observable@1.2.0:
     resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
     engines: {node: '>=0.10.0'}
@@ -9361,6 +9377,10 @@ snapshots:
       validator: 13.12.0
     transitivePeerDependencies:
       - encoding
+
+  '@img-comparison-slider/react@8.0.2':
+    dependencies:
+      img-comparison-slider: 8.0.6
 
   '@inquirer/confirm@5.0.1(@types/node@18.16.9)':
     dependencies:
@@ -14159,6 +14179,8 @@ snapshots:
   image-size@0.5.5:
     optional: true
 
+  img-comparison-slider@8.0.6: {}
+
   immer@9.0.21: {}
 
   immutable@4.3.7: {}
@@ -16918,6 +16940,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  swiper@11.1.15: {}
   symbol-observable@1.2.0: {}
 
   symbol-tree@3.2.4: {}
