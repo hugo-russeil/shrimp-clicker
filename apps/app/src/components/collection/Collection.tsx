@@ -36,6 +36,7 @@ const Collection = () => {
         justifyItems={'center'}
         columns={[2, 3, 4]}
         spacing={10}
+        gap={10}
       >
         {nbFishs === 4 && (
           <ConfettiExplosion />
