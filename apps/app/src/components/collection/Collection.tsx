@@ -38,12 +38,16 @@ const Collection = () => {
         gap="80px"
       >
         {nbFishs === 4 && (
-          <div>
             <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
             <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
             <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
             <ConfettiExplosion />
-          </div>
         )}
         {fishs.map((fish: { name: string }, index) => {
           return (
