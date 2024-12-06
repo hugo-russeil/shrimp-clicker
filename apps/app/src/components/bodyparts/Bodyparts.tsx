@@ -92,7 +92,7 @@ export default function Bodyparts() {
       <h1 className={'text-2xl w-full text-center my-12'}>
         Explore les similarités du corps humain et des océans
       </h1>
-      <div className={'w-[30%] mx-auto'}>
+      <div className={'w-full md:w-[30%] mx-auto'}>
         <ImagePinContainer
           image={'bodyparts.png'}
           imageAlt={'Parties du corps humain'}

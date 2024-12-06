@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ImgComparisonSlider } from '@img-comparison-slider/react';
 
 
-const Comparison = ({ organPath="/hearth.svg", oceanPath="/hearth.png" }) => {
+const Comparison = ({ organPath="/heart.svg", oceanPath="/currents.png" }) => {
 
   const [clipedImage, setClipedImage] = useState(null);
 
