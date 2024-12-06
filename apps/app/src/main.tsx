@@ -6,6 +6,7 @@ import { Provider } from './components/ui/provider';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './app/homepage';
+import QcmPage from './components/qcm/qcmPage';
 
 import Collection from './components/collection/Collection';
 
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
         path: '/collection',
         element: <Collection />,
       },
-    ],
+      {
+        path: '/qcm',
+        element: <QcmPage />,
+      },
+    ]
   },
 ]);
 
