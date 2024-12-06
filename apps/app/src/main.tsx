@@ -6,7 +6,11 @@ import { Provider } from './components/ui/provider';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './app/homepage';
+
 import Clicker from './components/Clicker';
+import QcmPage from './components/qcm/qcmPage';
+
+import Collection from './components/collection/Collection';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: '/clicker',
         element: <Clicker />,
+      },
+      {
+        path: '/collection',
+        element: <Collection />,
+      },
+      {
+        path: '/qcm',
+        element: <QcmPage />,
       },
     ]
   },
