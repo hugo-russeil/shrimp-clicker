@@ -86,19 +86,19 @@ const MANUAL_UPGRADES: Array<ManualClickUpgrade> = [
   },
   {
     name: 'Filet automatisé',
-    cost: 10_000,
+    cost: 100_000,
     description: 'Un filet motorisé augmente considérablement l\'efficacité de la récolte.',
     planktonPerClick: 15,
   },
   {
     name: 'Station flottante',
-    cost: 10_000,
+    cost: 1_000_000,
     description: 'Une station semi-automatisée maximise le plancton récolté par action.',
     planktonPerClick: 15,
   },
   {
     name: 'Système de collecte avancé',
-    cost: 10_000,
+    cost: 100_000_000,
     description: 'Un équipement de pointe permet une récolte optimale à chaque clic.',
     planktonPerClick: 15,
   },
