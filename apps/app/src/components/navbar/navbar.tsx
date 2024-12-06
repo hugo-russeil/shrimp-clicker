@@ -8,7 +8,7 @@ export const Navbar: React.FC<{ routes: Record<string, string> }> = ({
       <ul className="flex navbar-nav place-content-center gap-4">
         {Object.keys(routes).map((route) => {
           return (
-            <a href={routes[route]}>
+            <a key={routes[route]} href={routes[route]}>
               <li className="nav-item align-middle hover:underline px-5 py-5 rounded duration-0">
                 {route}
               </li>

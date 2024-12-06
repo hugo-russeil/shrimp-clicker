@@ -4,6 +4,7 @@ import { HoverCardArrow, HoverCardContent, HoverCardRoot, HoverCardTrigger } fro
 import { Card, Image } from '@chakra-ui/react';
 import { Badge, Box, HStack } from '@chakra-ui/react';
 import { Button } from '../ui/button';
+import { useNavigate } from 'react-router-dom';
 
 export type PinpointLinksType = Array<{
   //      [x     , y     ]
@@ -16,37 +17,44 @@ export type PinpointLinksType = Array<{
 const LINKS: PinpointLinksType = [
   {
     title: "Poumons",
-    description: "TODO",
+    description: "Les plantes marines sont les poumons des océans",
     coords: [40, 45],
-    href: "/",
+    href: "/comparison/lungs",
   }, {
     title: "Coeur",
-    description: "TODO",
+    description: "Les courants marins sont le cœur de la planète",
     coords: [51, 44],
-    href: "/",
+    href: "/comparison/hearth",
   }, {
     title: "Estomac",
-    description: "TODO",
+    description: "Les zones de convergence sont l’estomac des océans",
     coords: [57, 57],
-    href: "/",
+    href: "/comparison/stomach",
+  }, {
+    title: "Foie",
+    description: "Les filtres naturels sont le foie des océans",
+    coords: [50, 53],
+    href: "/comparison/liver",
+  }, {
+    title: "Peau",
+    description: "La surface des océans est comme la peau de la planète",
+    coords: [30, 40],
+    href: "/comparison/skin",
   }
 ]
 
-const sendToViaClickedPin = (pin: ImagePin)=> {
-
-  // TODO : Navigate to the corresponding page
-
-  const MATCHING_LINK = LINKS.find((link, index) => {
-    return `${index}` === pin.id;
-  });
-
-  console.log('User clicked on link href', MATCHING_LINK?.href);
-
-  // use navigate on the matching link href.
-  // navigate(MATCHING_LINK?.href || "/");
-}
-
 export const CustomPin = ({ pin }: { pin: ImagePin }) => {
+  const navigate = useNavigate();
+
+  const sendToViaClickedPin = (pin: ImagePin) => {
+
+    console.log("CustomPin ", pin.id);
+
+    const { href } = LINKS.find((link, index) => `${index}` === pin.id)!;
+    navigate(href);
+  }
+
+  const href = LINKS.find((link, index) => `${index}` === pin.id)!.href;
 
   const { title, description } = LINKS.find((link, index) => `${index}` === pin.id)!;
 
@@ -55,7 +63,7 @@ export const CustomPin = ({ pin }: { pin: ImagePin }) => {
       <HoverCardTrigger asChild>
         {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
         <a
-          href={'/'}
+          href={href}
           className={`absolute w-5 h-5 rounded-full bg-lime-400 hover:bg-lime-500 hover:scale-150 transition-all duration-300`}
         />
       </HoverCardTrigger>
@@ -78,14 +86,13 @@ export const CustomPin = ({ pin }: { pin: ImagePin }) => {
 };
 
 export default function Bodyparts() {
-  // const navigate = useNavigate();
 
   return (
     <div>
       <h1 className={'text-2xl w-full text-center my-12'}>
         Explore les similarités du corps humain et des océans
       </h1>
-      <div className={'w-[30%] mx-auto'}>
+      <div className={'w-full md:w-[30%] mx-auto'}>
         <ImagePinContainer
           image={'bodyparts.png'}
           imageAlt={'Parties du corps humain'}
@@ -99,7 +106,6 @@ export default function Bodyparts() {
             };
           })}
           customPinComponent={(pin) => <CustomPin pin={pin} />}
-          onExistingPin={sendToViaClickedPin}
         />
       </div>
     </div>
