@@ -75,7 +75,7 @@ export function App() {
           <Image
             src={'/cod.png'}
             alt="Image de poisson"
-            imageRendering={'crisp-edges'}
+            imageRendering={'pixelated'}
             width={'100px'}
             height={'100px'}
             opacity={isExploding ? 0 : 1}

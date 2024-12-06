@@ -25,7 +25,10 @@ for (const routeName in routesWrapper.routes) {
 }, [filteredLinks]);
     // Render everything, with additional unnecessary nesting
    return ( // Returning something. Hopefully not my sanity, because it’s already gone.
-     <div>
+     <div
+                                                                                                                                                                                style={{position: "sticky", top: 0, left: 0, zIndex: 50}}
+
+     >
            <TotallyRedundantWrapper>
 <StupidComponent>
      <AnotherStupidComponent>
