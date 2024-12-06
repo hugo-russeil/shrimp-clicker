@@ -11,8 +11,13 @@ const FinalPage = ({ score, total }: { score: number; total: number }) => {
   const [isExploding, setIsExploding] = useState(false);
 
   const moveImage = () => {
+    const position =  window.scrollY;
+    const windowHeight = window.innerHeight;
+    const top = position + windowHeight / 2;
+    console.log(top);
     setPosition({
-      top: '80%',
+      // en fonction de la ou est l'utilisateur
+      top: `${top}px`,
       left: '48%',
     });
   };
@@ -39,7 +44,7 @@ const FinalPage = ({ score, total }: { score: number; total: number }) => {
   }
 
   return (
-    <div className="text-center mt-10 overflow-hidden">
+    <div className="text-center mt-10">
       <div className={`${bgColor} rounded-lg p-6 shadow-lg`}>
         <h2 className="text-4xl font-extrabold">
           Votre score est de {score} / {total}
@@ -61,6 +66,7 @@ const FinalPage = ({ score, total }: { score: number; total: number }) => {
                 className="w-20 h-20 absolute"
               >
                 {isExploding && <ConfettiExplosion />}
+
                 <Image
                   src={'/pufferfish.png'}
                   alt="Image de poisson"
