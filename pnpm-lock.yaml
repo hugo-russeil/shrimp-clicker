@@ -38,6 +38,9 @@ importers:
       axios:
         specifier: ^1.6.0
         version: 1.7.7
+      characterset:
+        specifier: ^2.0.0
+        version: 2.0.0
       csrf-csrf:
         specifier: ^3.0.8
         version: 3.0.8
@@ -3554,6 +3557,9 @@ packages:
   char-regex@1.0.2:
     resolution: {integrity: sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==}
     engines: {node: '>=10'}
+
+  characterset@2.0.0:
+    resolution: {integrity: sha512-+eMa/W+3FwFZh6dcaVrKkOFN4DlvOa2Z1zTZngs/ZvAVUb/sAFRo8hYuX9lzOAd8J5uc62WMACiYHW742P5erA==}
 
   check-error@1.0.3:
     resolution: {integrity: sha512-iKEoDYaRmd1mxM90a2OEfWhjsjPpYPuQ+lMYsoxB126+t8fw7ySEO48nmDg5COTjxDI65/Y2OWpeEHk3ZOe8zg==}
@@ -12529,6 +12535,8 @@ snapshots:
       supports-color: 7.2.0
 
   char-regex@1.0.2: {}
+
+  characterset@2.0.0: {}
 
   check-error@1.0.3:
     dependencies:
