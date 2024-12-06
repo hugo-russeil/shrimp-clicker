@@ -4,7 +4,7 @@ const HeartComparison = () => {
   return (
     <ComparisonTemplate
       organPath={"/organs/heart.svg"}
-      oceanPath={"/oceans/currents.svg"}
+      oceanPath={"/oceans/currents.png"}
       title={"Les courants marins sont le cœur de la planète"}
       organName={"Le cœur"}
       oceanName={"Les courants marins"}
