@@ -42,7 +42,7 @@ const FinalPage = ({ score, total }: { score: number; total: number }) => {
         <h2 className="text-4xl font-extrabold">
           Votre score est de {score} / {total}
         </h2>
-        {!isPerfectScore && (
+        {isPerfectScore && (
           <div>
             <p className="text-xl mt-4 font-bold text-green-600 dark:text-green-300">
               🎉 Félicitations pour un score parfait! 🎉
@@ -68,19 +68,7 @@ const FinalPage = ({ score, total }: { score: number; total: number }) => {
                   opacity={isExploding ? 0 : 1}
                   onClick={() => {
                     setIsExploding(true);
-                    const listFishs = JSON.parse(
-                      localStorage.getItem('collection') || '[]'
-                    );
-                    if (listFishs.length === 0) {
-                      addFish('pufferfish');
-                    } else {
-                      listFishs.forEach((fish: { name: string }) => {
-                        if (fish.name === 'pufferfish') {
-                          return;
-                        }
-                      });
-                      addFish('pufferfish');
-                    }
+                    addFish('pufferfish');
                   }}
                 />
               </div>
