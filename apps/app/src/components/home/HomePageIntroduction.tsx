@@ -43,8 +43,13 @@ const HomePageIntroduction = () => {
       />
       <Container marginTop={'5%'}>
         <Grid gap={24} textAlign={'center'} color={'black'}>
-          <h1> Titre </h1>
-          <p> Introduction </p>
+          <h1> L’Océan : Le Cœur Battant de Notre Planète </h1>
+          <p> L’océan est l’essence même de la vie sur Terre. À la manière d’un corps humain, 
+            il régule les processus vitaux qui garantissent la santé de notre planète. 
+            De la circulation des courants marins à la capture de CO2, l’océan agit comme un cœur, des poumons, 
+            et bien plus encore. Pourtant, il est aujourd’hui menacé par la pollution et le changement climatique. 
+            À travers cette introduction, explorons les fascinantes connexions entre l’océan et le corps humain 
+            pour mieux comprendre pourquoi sa préservation est cruciale pour l’avenir de la vie sur Terre.</p>
           <TrailWithLines
             steps={homeContent.map((content, index) => ({
               icon: <CheckCircle />,
