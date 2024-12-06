@@ -174,15 +174,15 @@ export default function Clicker() {
       >
         Plank-ton-O<em className={'text-xs top-5'}>2</em> !
       </h1>
-      <div className={'flex flex-row w-[80%] mx-auto'}>
+      <div className={'flex flex-col lg:flex-row w-[80%] mx-auto'}>
         <div className={'grow'}>
           <ol className={'w-full items-center'}>
             {MANUAL_UPGRADES.map((upgrade, index) => {
               const hasUnlocked = unlockedManualUpgrades.includes(upgrade.name);
 
               return (
-                <li key={index} className={'p-4 flex flex-row'}>
-                  <div className={'flex flex-row justify-between w-full'}>
+                <li key={index} className={'p-4 flex flex-col lg:flex-row '}>
+                  <div className={'flex flex-col lg:flex-row justify-between w-full'}>
                     <div>
                       <div className={'flex flex-row gap-2'}>
                         {hasUnlocked ? <CheckCheck /> : <X />}
@@ -214,7 +214,7 @@ export default function Clicker() {
                           tryBuyManualUpgrades(upgrade);
                         }}
                       >
-                        <div className={"flex flex-row items-center"}>
+                        <div className={"flex flex-col lg:flex-row items-center"}>
                           <Sprout className={"ml-2"} />
                           <span>{upgrade.cost.toLocaleString('fr-FR')}</span>
                         </div>
@@ -238,13 +238,13 @@ export default function Clicker() {
             }}
           />
           <div className={'mx-auto'}>
-            <div className={'flex flex-row items-center'}>
+            <div className={'flex flex-col lg:flex-row items-center'}>
               <Sprout className={'inline'} />
               <p className={'w-full italic'}>
                 Plancton : {collectedPlanktons}
               </p>
             </div>
-            <div className={'flex flex-row items-center'}>
+            <div className={'flex flex-col lg:flex-row items-center'}>
               <Sprout className={'inline fill-lime-400'} />
               <p className={'w-full italic'}>
                 Plancton collecté (total): {totalCollectedPlanktons}
@@ -258,8 +258,8 @@ export default function Clicker() {
               const hasUnlocked = unlockedAutoclickUpgrades.includes(upgrade.name);
 
               return (
-                <li key={index} className={'p-4 flex flex-row'}>
-                  <div className={'flex flex-row justify-between w-full'}>
+                <li key={index} className={'p-4 flex flex-col lg:flex-row'}>
+                  <div className={'flex flex-col lg:flex-row justify-between w-full'}>
                     <div>
                       <div className={'flex flex-row gap-2'}>
                         {hasUnlocked ? <CheckCheck /> : <X />}
@@ -284,7 +284,7 @@ export default function Clicker() {
                           tryBuyAutoclickUpgrades(upgrade);
                         }}
                       >
-                        <div className={"flex flex-row items-center"}>
+                        <div className={"flex flex-col lg:flex-row items-center"}>
                           <Sprout className={"ml-2"} />
                           <span>{upgrade.cost.toLocaleString('fr-FR')}</span>
                         </div>
