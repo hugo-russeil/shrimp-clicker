@@ -7,6 +7,8 @@ import { Provider } from './components/ui/provider';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './app/homepage';
 
+import Collection from './components/collection/Collection';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -16,7 +18,11 @@ const router = createBrowserRouter([
         path: '/',
         element: <Homepage />,
       },
-    ]
+      {
+        path: '/collection',
+        element: <Collection />,
+      },
+    ],
   },
 ]);
 
