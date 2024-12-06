@@ -16,6 +16,7 @@ import LiverComparison from './components/comparison/LiverComparison';
 import SkinComparison from './components/comparison/SkinComparison';
 
 import Collection from './components/collection/Collection';
+import Ocean from './components/ocean';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: '/comparison/skin',
         element: <SkinComparison/>
+      },
+      {
+        path: '/ocean',
+        element: <Ocean/>
       }
     ]
   },
