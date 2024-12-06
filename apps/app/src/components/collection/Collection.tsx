@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Container, SimpleGrid } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
-import Waves from '../utils/Waves';
 import ConfettiExplosion from 'react-confetti-explosion';
 
 export const addFish = (fishName: string) => {
@@ -21,45 +20,48 @@ const Collection = () => {
   }, []);
 
   return (
-    /* TODO Changer le height ici */
     <Container
       margin={'0'}
       padding={'0'}
       maxWidth={'100%'}
-      height={'899px'}
+      minHeight={'100vh'}
       backgroundColor={'#D3D3D3'}
     >
-      <h1 className="text-black text-center pt-16"> {nbFishs} / 4 </h1>
+      <h1 className="text-black text-center pt-8 text-2xl font-bold">
+        {nbFishs} / 4
+      </h1>
+      {nbFishs === 4 && (
+            <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
+            <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
+            <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
+            <ConfettiExplosion />
+        )}
       <SimpleGrid
-        backgroundColor={'#D3D3D3'}
         paddingTop={'5%'}
         justifyItems={'center'}
-        columns={4}
-        gap="80px"
+        columns={[2, 3, 4]}
+        spacing={10}
       >
-        {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
-        {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
-        {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
-        {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
         {fishs.map((fish: { name: string }, index) => {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              className="flex justify-center items-center bg-white rounded-lg shadow-md"
+            >
               <Image
                 imageRendering={'crisp-edges'}
-                width={'350px'}
-                height={'350px'}
+                width={['150px', '250px', '350px']}
+                height={['150px', '250px', '350px']}
                 src={fish.name + '.png'}
                 border={'1px solid black'}
                 rounded={'15px'}
-                verticalAlign={'center'}
+                alt={`Fish ${index + 1}`}
               />
             </div>
           );
