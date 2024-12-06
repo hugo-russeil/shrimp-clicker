@@ -101,7 +101,7 @@ const TrailWithLines = ({ steps, stepSpacing = 400 }) => {
                     {!mobile ? (
                       <HoverCardRoot>
                         <HoverCardTrigger asChild>
-                          <Circle color="#0064A8" size={'50px'} />
+                          <Circle color="#0064A8" fill={"#0064A8"}  size={'50px'} />
                         </HoverCardTrigger>
                         <HoverCardContent>
                           <HoverCardArrow />
