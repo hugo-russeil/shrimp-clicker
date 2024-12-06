@@ -5,18 +5,18 @@ import { useEffect, useState } from "react"
 const SeaLevel = () => {
     const [text, setText] = useState(0);
     const height = 2550;
-    
+
     const updateText = () => {
         const val = Math.round((window.scrollY*10916)/height)
         if (val > 10916)
-            setText(10916)
+            setText(val)
         else
             setText(val)
     };
 
     const sound = () => {
-        
-        var audio 
+
+        var audio
         if (Math.floor(Math.random() * 2))
         {
             audio = new Audio("sound/oof.mp3")
@@ -30,7 +30,7 @@ const SeaLevel = () => {
 
     useEffect(() => {
         window.addEventListener('scroll',updateText)
-        
+
     });
 
     return (
