@@ -7,6 +7,11 @@ import { Provider } from './components/ui/provider';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './app/homepage';
 import QcmPage from './components/qcm/qcmPage';
+import HearthComparison from './components/comparison/HearthComparison';
+import LungComparison from './components/comparison/LungComparison';
+import StomachComparison from './components/comparison/StomachComparison';
+import LiverComparison from './components/comparison/LiverComparison';
+import SkinComparison from './components/comparison/SkinComparison';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +26,26 @@ const router = createBrowserRouter([
         path: '/qcm',
         element: <QcmPage />,
       },
+      {
+        path: '/comparison/lungs',
+        element: <LungComparison/>
+      },
+      {
+        path: '/comparison/hearth',
+        element: <HearthComparison/>
+      },
+      {
+        path: '/comparison/stomach',
+        element: <StomachComparison/>
+      },
+      {
+        path: '/comparison/liver',
+        element: <LiverComparison/>
+      },
+      {
+        path: '/comparison/skin',
+        element: <SkinComparison/>
+      }
     ]
   },
 ]);
