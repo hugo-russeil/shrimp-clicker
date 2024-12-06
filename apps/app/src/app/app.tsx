@@ -4,7 +4,7 @@ import { Navbar } from '../components/navbar/navbar';
 export function App() {
   return (
     <div>
-      <Navbar routes={{ Accueil: '/', Qcm: '/qcm' }} />
+      <Navbar routes={{ Accueil: '/', Qcm: '/qcm', Collection: '/collection' }} />
       <Outlet />
     </div>
   );
