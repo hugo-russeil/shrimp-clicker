@@ -30,24 +30,25 @@ const Collection = () => {
       <h1 className="text-black text-center pt-8 text-2xl font-bold">
         {nbFishs} / 4
       </h1>
-      {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
-        {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
-        {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
-        {nbFishs === 4 && (
-            <ConfettiExplosion />
-        )}
+
       <SimpleGrid
         paddingTop={'5%'}
         justifyItems={'center'}
         columns={[2, 3, 4]}
         spacing={10}
       >
+        {nbFishs === 4 && (
+          <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
+            <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
+            <ConfettiExplosion />
+        )}
+        {nbFishs === 4 && (
+            <ConfettiExplosion />
+        )}
         {fishs.map((fish: { name: string }, index) => {
           return (
             <div
