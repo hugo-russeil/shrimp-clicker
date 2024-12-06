@@ -4,10 +4,14 @@ import { useEffect, useState } from "react"
 
 const SeaLevel = () => {
     const [text, setText] = useState(0);
-    const height = document.body.scrollHeight;
+    const height = 2550;
     
     const updateText = () => {
-        setText(Math.round((window.scrollY*10916)/height))
+        const val = Math.round((window.scrollY*10916)/height)
+        if (val > 10916)
+            setText(10916)
+        else
+            setText(val)
     };
 
     const sound = () => {
