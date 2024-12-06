@@ -204,7 +204,7 @@ export default function Clicker() {
           <Image
             src={'/salmon.png'}
             alt="Image de poisson"
-            imageRendering={'crisp-edges'}
+            imageRendering={'pixelated'}
             width={'100px'}
             height={'100px'}
             opacity={isExploding ? 0 : 1}
