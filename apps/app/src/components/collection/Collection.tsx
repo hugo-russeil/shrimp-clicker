@@ -15,7 +15,7 @@ const Collection = () => {
   const [nbFishs, setNbFishs] = useState(0);
 
   useEffect(() => {
-    const listFishs = JSON.parse(localStorage.getItem('collection'));
+    const listFishs = JSON.parse(localStorage.getItem('collection') || '[]');
     setNbFishs(listFishs.length || 0);
     setFishs(listFishs || []);
   }, []);
@@ -37,10 +37,14 @@ const Collection = () => {
         columns={4}
         gap="80px"
       >
-        <ConfettiExplosion />
-        <ConfettiExplosion />
-        <ConfettiExplosion />
-        <ConfettiExplosion />
+        {nbFishs === 4 && (
+          <div>
+            <ConfettiExplosion />
+            <ConfettiExplosion />
+            <ConfettiExplosion />
+            <ConfettiExplosion />
+          </div>
+        )}
         {fishs.map((fish: { name: string }, index) => {
           return (
             <div key={index}>
