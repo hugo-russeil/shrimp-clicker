@@ -28,6 +28,21 @@ type ManualClickUpgrade = {
   description: string;
 } & (NormalManualClickUpgrade | FinalManualClickUpgrade);
 
+const ShrimpConfetti = ({ x, y }: { x: number; y: number }) => {
+  return (
+    <img
+      src={'shrimp.png'}
+      alt="Shrimp"
+      className="absolute w-8 h-8 animate-shrimp-confetti"
+      style={{
+        top: `${y}px`,
+        left: `${x}px`,
+      }}
+    />
+  );
+};
+
+
 const AUTOCLICK_UPGRADES: Array<AutoclickerUpgrade> = [
   {
     name: 'Remous légers',
@@ -74,6 +89,38 @@ const AUTOCLICK_UPGRADES: Array<AutoclickerUpgrade> = [
 ];
 
 export default function Clicker() {
+  const [isSquishing, setIsSquishing] = useState(false);
+  const [confetti, setConfetti] = useState<Array<{ id: number; x: number; y: number }>>([]);
+
+  const handleShrimpClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+    setIsSquishing(true);
+    manualClickHandler();
+  
+    // Get bounding box of the main shrimp
+    const container = e.currentTarget.getBoundingClientRect();
+    const randomOffsetX = Math.random() * 100 - 50; // Random value between -50 and 50
+    const randomOffsetY = Math.random() * 100 - 50; // Random value between -50 and 50
+  
+    const newConfetti = {
+      id: Date.now(),
+      x: container.left + container.width / 2 + randomOffsetX, // Center of shrimp + offset
+      y: container.top + container.height / 2 + randomOffsetY, // Center of shrimp + offset
+    };
+  
+    setConfetti((prev) => [...prev, newConfetti]);
+  
+    setTimeout(() => {
+      setIsSquishing(false);
+    }, 1000); // Reset squish after 1s
+  
+    // Remove confetti after animation
+    setTimeout(() => {
+      setConfetti((prev) => prev.filter((item) => item.id !== newConfetti.id));
+    }, 2000); // Match this with the CSS animation duration
+  };
+  
+
+
   const MANUAL_UPGRADES: Array<ManualClickUpgrade> = [
     {
       name: 'Filet à shrimp',
@@ -299,16 +346,19 @@ export default function Clicker() {
           </ol>
         </div>
         <div className={'flex flex-col justify-evenly gap-4 grow-0'}>
-          <img
-            src={'shrimp.png'}
-            alt={'Shrimp'}
-            className={
-              'drop-shadow-xl select-none hover:scale-105 transition-all duration-300 w-[40%] mx-auto'
-            }
-            onClick={() => {
-              manualClickHandler();
-            }}
-          />
+          {/* Shrimp Confetti */}
+          {confetti.map((item) => (
+            <ShrimpConfetti key={item.id} x={item.x} y={item.y} />
+          ))}
+        <img
+          src={'shrimp.png'}
+          alt={'Shrimp'}
+          className={`drop-shadow-xl select-none transition-all duration-20 w-[40%] mx-auto ${
+            isSquishing ? 'hover:scale-90' : 'hover:scale-100'
+          }`}
+          onClick={handleShrimpClick}
+        />
+
           <div className={'mx-auto'}>
             <div className={'flex flex-col lg:flex-row items-center'}>
               <Sprout className={'inline'} />
