@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/app/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/api/Dockerfile . -t api"
+    }
+  }
+}
